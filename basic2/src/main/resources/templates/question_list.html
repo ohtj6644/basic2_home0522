@@ -1,0 +1,19 @@
+<table>
+    <thead>
+    <tr>
+        <th>제목</th>
+        <th>작성일시</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="question : ${questionList}">
+        <!--퀘스쳔 리스트의 목록을 하나씩 반복 -->
+        <td>
+            <a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a>
+        </td>
+        <!-- 질문의 제목을 불러옴 -->
+        <td th:text="${question.createDate}"></td>
+        <!-- 질문의 생성일을 불러움 -->
+    </tr>
+    </tbody>
+</table>
